@@ -16,5 +16,22 @@ namespace TBP
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioBtnPacijent_CheckedChanged(object sender, EventArgs e)
+        {
+            panelRegistracijaPacijent.Visible = true;
+            panelRegistracijaDoktor.Visible = false;
+        }
+
+        private void radioBtnDoktor_CheckedChanged(object sender, EventArgs e)
+        {
+            panelRegistracijaDoktor.Visible = true;
+            panelRegistracijaPacijent.Visible = false;
+        }
     }
 }
