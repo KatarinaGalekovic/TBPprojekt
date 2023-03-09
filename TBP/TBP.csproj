@@ -273,20 +273,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoktorForm.cs">
+    <Compile Include="Forms\DoktorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoktorForm.Designer.cs">
+    <Compile Include="Forms\DoktorForm.Designer.cs">
       <DependentUpon>DoktorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoktorRepozitorij.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Repositories\DoktorRepozitorij.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="KorisnikRepozitorij.cs" />
+    <Compile Include="Repositories\KorisnikRepozitorij.cs" />
     <Compile Include="Models\biljeska.cs" />
     <Compile Include="Models\dogadanja.cs" />
     <Compile Include="Models\doktor.cs" />
@@ -303,32 +303,32 @@
     <Compile Include="Models\svidanje_imena.cs" />
     <Compile Include="Models\tbpContext.cs" />
     <Compile Include="Models\tema.cs" />
-    <Compile Include="OdabirPacijentaForm.cs">
+    <Compile Include="Forms\OdabirPacijentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OdabirPacijentaForm.Designer.cs">
+    <Compile Include="Forms\OdabirPacijentaForm.Designer.cs">
       <DependentUpon>OdabirPacijentaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpisPacijenta.cs">
+    <Compile Include="Forms\OpisPacijenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpisPacijenta.Designer.cs">
+    <Compile Include="Forms\OpisPacijenta.Designer.cs">
       <DependentUpon>OpisPacijenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="PacijentRepozitorij.cs" />
+    <Compile Include="Repositories\PacijentRepozitorij.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PacijentViewModel.cs" />
-    <EmbeddedResource Include="DoktorForm.resx">
+    <EmbeddedResource Include="Forms\DoktorForm.resx">
       <DependentUpon>DoktorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OdabirPacijentaForm.resx">
+    <EmbeddedResource Include="Forms\OdabirPacijentaForm.resx">
       <DependentUpon>OdabirPacijentaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpisPacijenta.resx">
+    <EmbeddedResource Include="Forms\OpisPacijenta.resx">
       <DependentUpon>OpisPacijenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

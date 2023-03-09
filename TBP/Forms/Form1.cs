@@ -93,34 +93,32 @@ namespace TBP
             string korisnickoIme = txtBoxPrijavaKorisnickoIme.Text;
             string lozinka = txtBoxPrijavaLozinka.Text;
 
-            using(tbpContext ctx = new tbpContext())
+            korisnik trazeniKorisnik = KorisnikRepozitorij.PrijaviKorisnika(korisnickoIme, lozinka);
+
+            if (trazeniKorisnik != null)
             {
-                korisnik trazeniKorisnik = ctx.korisnik.Include(k=>k.doktor).Include(k=>k.pacijent).FirstOrDefault(k => k.korisnicko_ime == korisnickoIme && k.lozinka == lozinka);
-                if (trazeniKorisnik!=null)
+                txtBoxPrijavaKorisnickoIme.Clear();
+                txtBoxPrijavaLozinka.Clear();
+
+                this.Hide();
+                if (trazeniKorisnik.doktor != null)
                 {
-                    txtBoxPrijavaKorisnickoIme.Clear();
-                    txtBoxPrijavaLozinka.Clear();
+                    doktor trazeniDoktor = trazeniKorisnik.doktor;
 
-                    this.Hide();
+                    DoktorForm doktorForm = new DoktorForm(trazeniDoktor);
 
-                    if (trazeniKorisnik.doktor!=null)
-                    {
-                        doktor trazeniDoktor = trazeniKorisnik.doktor;
-
-                        DoktorForm doktorForm = new DoktorForm(trazeniDoktor);
-                        
-                        doktorForm.FormClosed += (a, b) => { this.Show(); };
-                        doktorForm.Show();
-                    } else
-                    {
-                        pacijent trazeniPacijent = trazeniKorisnik.pacijent;
-                    }
+                    doktorForm.FormClosed += (a, b) => { this.Show(); };
+                    doktorForm.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Pogrešno korisničko ime ili lozinka. Molimo pokušajte ponovno.", "Greška");
-                    txtBoxPrijavaLozinka.Clear();
+                    pacijent trazeniPacijent = trazeniKorisnik.pacijent;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Pogrešno korisničko ime ili lozinka. Molimo pokušajte ponovno.", "Greška");
+                txtBoxPrijavaLozinka.Clear();
             }
         }
     }
