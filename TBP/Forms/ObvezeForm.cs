@@ -110,6 +110,8 @@ namespace TBP.Forms
 
             e.DrawBackground();
 
+            if (e.Index == -1)
+                return;
             string item = (listBoxObveze.Items[e.Index] as obveza).opis;
             e.Graphics.DrawString(item, e.Font,  coloring ? Brushes.White : Brushes.Black, e.Bounds, StringFormat.GenericDefault);
 

@@ -42,6 +42,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewPregledi = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.progressBarPoroda = new System.Windows.Forms.ProgressBar();
+            this.lblPredvidenDatumPoroda = new System.Windows.Forms.Label();
+            this.lblTekstPorod = new System.Windows.Forms.Label();
+            this.dateTimePickerPredvideniDatumPoroda = new System.Windows.Forms.DateTimePicker();
+            this.lblDoktor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBiljeske)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPregledi)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +66,7 @@
             this.dataGridViewBiljeske.AllowUserToAddRows = false;
             this.dataGridViewBiljeske.AllowUserToDeleteRows = false;
             this.dataGridViewBiljeske.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBiljeske.Location = new System.Drawing.Point(320, 109);
+            this.dataGridViewBiljeske.Location = new System.Drawing.Point(440, 131);
             this.dataGridViewBiljeske.Name = "dataGridViewBiljeske";
             this.dataGridViewBiljeske.ReadOnly = true;
             this.dataGridViewBiljeske.Size = new System.Drawing.Size(450, 127);
@@ -70,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 93);
+            this.label1.Location = new System.Drawing.Point(437, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 2;
@@ -78,7 +83,7 @@
             // 
             // btnDodajBiljesku
             // 
-            this.btnDodajBiljesku.Location = new System.Drawing.Point(645, 242);
+            this.btnDodajBiljesku.Location = new System.Drawing.Point(765, 264);
             this.btnDodajBiljesku.Name = "btnDodajBiljesku";
             this.btnDodajBiljesku.Size = new System.Drawing.Size(125, 27);
             this.btnDodajBiljesku.TabIndex = 3;
@@ -114,11 +119,12 @@
             this.btnDogadanja.TabIndex = 6;
             this.btnDogadanja.Text = "Događanja u trudnoći";
             this.btnDogadanja.UseVisualStyleBackColor = true;
+            this.btnDogadanja.Click += new System.EventHandler(this.btnDogadanja_Click);
             // 
             // lblMjerenje
             // 
             this.lblMjerenje.AutoSize = true;
-            this.lblMjerenje.Location = new System.Drawing.Point(198, 507);
+            this.lblMjerenje.Location = new System.Drawing.Point(197, 551);
             this.lblMjerenje.Name = "lblMjerenje";
             this.lblMjerenje.Size = new System.Drawing.Size(157, 13);
             this.lblMjerenje.TabIndex = 7;
@@ -127,7 +133,7 @@
             // 
             // txtBoxMjerenje
             // 
-            this.txtBoxMjerenje.Location = new System.Drawing.Point(30, 467);
+            this.txtBoxMjerenje.Location = new System.Drawing.Point(29, 511);
             this.txtBoxMjerenje.Name = "txtBoxMjerenje";
             this.txtBoxMjerenje.Size = new System.Drawing.Size(57, 20);
             this.txtBoxMjerenje.TabIndex = 9;
@@ -135,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 470);
+            this.label2.Location = new System.Drawing.Point(92, 514);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 10;
@@ -143,7 +149,7 @@
             // 
             // btnNovoMjerenje
             // 
-            this.btnNovoMjerenje.Location = new System.Drawing.Point(30, 494);
+            this.btnNovoMjerenje.Location = new System.Drawing.Point(29, 538);
             this.btnNovoMjerenje.Name = "btnNovoMjerenje";
             this.btnNovoMjerenje.Size = new System.Drawing.Size(82, 39);
             this.btnNovoMjerenje.TabIndex = 11;
@@ -154,7 +160,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(148, 507);
+            this.label3.Location = new System.Drawing.Point(147, 551);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 12;
@@ -166,7 +172,7 @@
             this.dataGridViewPregledi.AllowUserToAddRows = false;
             this.dataGridViewPregledi.AllowUserToDeleteRows = false;
             this.dataGridViewPregledi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPregledi.Location = new System.Drawing.Point(320, 311);
+            this.dataGridViewPregledi.Location = new System.Drawing.Point(440, 333);
             this.dataGridViewPregledi.Name = "dataGridViewPregledi";
             this.dataGridViewPregledi.ReadOnly = true;
             this.dataGridViewPregledi.Size = new System.Drawing.Size(450, 150);
@@ -175,17 +181,65 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(319, 295);
+            this.label4.Location = new System.Drawing.Point(439, 317);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Moji pregledi";
             // 
+            // progressBarPoroda
+            // 
+            this.progressBarPoroda.Location = new System.Drawing.Point(29, 425);
+            this.progressBarPoroda.Name = "progressBarPoroda";
+            this.progressBarPoroda.Size = new System.Drawing.Size(250, 23);
+            this.progressBarPoroda.TabIndex = 15;
+            // 
+            // lblPredvidenDatumPoroda
+            // 
+            this.lblPredvidenDatumPoroda.AutoSize = true;
+            this.lblPredvidenDatumPoroda.Location = new System.Drawing.Point(26, 360);
+            this.lblPredvidenDatumPoroda.Name = "lblPredvidenDatumPoroda";
+            this.lblPredvidenDatumPoroda.Size = new System.Drawing.Size(127, 13);
+            this.lblPredvidenDatumPoroda.TabIndex = 16;
+            this.lblPredvidenDatumPoroda.Text = "Predviđen datum poroda:";
+            // 
+            // lblTekstPorod
+            // 
+            this.lblTekstPorod.Location = new System.Drawing.Point(29, 399);
+            this.lblTekstPorod.Name = "lblTekstPorod";
+            this.lblTekstPorod.Size = new System.Drawing.Size(250, 23);
+            this.lblTekstPorod.TabIndex = 17;
+            this.lblTekstPorod.Text = "Još malo";
+            this.lblTekstPorod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePickerPredvideniDatumPoroda
+            // 
+            this.dateTimePickerPredvideniDatumPoroda.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateTimePickerPredvideniDatumPoroda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerPredvideniDatumPoroda.Location = new System.Drawing.Point(159, 354);
+            this.dateTimePickerPredvideniDatumPoroda.Name = "dateTimePickerPredvideniDatumPoroda";
+            this.dateTimePickerPredvideniDatumPoroda.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePickerPredvideniDatumPoroda.TabIndex = 18;
+            this.dateTimePickerPredvideniDatumPoroda.ValueChanged += new System.EventHandler(this.dateTimePickerPredvideniDatumPoroda_ValueChanged);
+            // 
+            // lblDoktor
+            // 
+            this.lblDoktor.Location = new System.Drawing.Point(26, 289);
+            this.lblDoktor.Name = "lblDoktor";
+            this.lblDoktor.Size = new System.Drawing.Size(377, 49);
+            this.lblDoktor.TabIndex = 19;
+            this.lblDoktor.Text = "Trenutni doktor: neodređen, molimo javite se svom doktoru da vas upiše";
+            // 
             // PacijentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 549);
+            this.ClientSize = new System.Drawing.Size(921, 604);
+            this.Controls.Add(this.lblDoktor);
+            this.Controls.Add(this.dateTimePickerPredvideniDatumPoroda);
+            this.Controls.Add(this.lblTekstPorod);
+            this.Controls.Add(this.lblPredvidenDatumPoroda);
+            this.Controls.Add(this.progressBarPoroda);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridViewPregledi);
             this.Controls.Add(this.label3);
@@ -226,5 +280,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewPregledi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ProgressBar progressBarPoroda;
+        private System.Windows.Forms.Label lblPredvidenDatumPoroda;
+        private System.Windows.Forms.Label lblTekstPorod;
+        private System.Windows.Forms.DateTimePicker dateTimePickerPredvideniDatumPoroda;
+        private System.Windows.Forms.Label lblDoktor;
     }
 }

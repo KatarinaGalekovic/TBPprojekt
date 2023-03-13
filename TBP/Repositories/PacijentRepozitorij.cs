@@ -14,7 +14,7 @@ namespace TBP
         {
             using (tbpContext ctx = new tbpContext())
             {
-                return ctx.pacijent.ToList();
+                return ctx.pacijent.Include(p=>p.idNavigation).ToList();
             }
         }
 
@@ -97,6 +97,15 @@ namespace TBP
             using(tbpContext ctx = new tbpContext())
             {
                 ctx.biljeska.Add(biljeska);
+                ctx.SaveChanges();
+            }
+        }
+
+        public static void AzurirajDatumPoroda(int pacijentID, DateTime datum)
+        {
+            using (tbpContext ctx = new tbpContext())
+            {
+                ctx.pacijent.FirstOrDefault(p => p.id == pacijentID).predvideni_datum_poroda = datum;
                 ctx.SaveChanges();
             }
         }

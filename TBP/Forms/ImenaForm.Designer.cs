@@ -39,6 +39,7 @@
             // listBoxImena
             // 
             this.listBoxImena.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.listBoxImena.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.listBoxImena.FormattingEnabled = true;
             this.listBoxImena.Location = new System.Drawing.Point(128, 84);
             this.listBoxImena.Name = "listBoxImena";

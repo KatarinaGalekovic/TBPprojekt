@@ -279,6 +279,12 @@
     <Compile Include="Forms\BiljeskaForm.Designer.cs">
       <DependentUpon>BiljeskaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DogadanjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DogadanjaForm.Designer.cs">
+      <DependentUpon>DogadanjaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoktorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,7 @@
     <Compile Include="Forms\PregledForm.Designer.cs">
       <DependentUpon>PregledForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\DogadanjaRepozitorij.cs" />
     <Compile Include="Repositories\DoktorRepozitorij.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -355,6 +362,9 @@
     <Compile Include="ViewModels\PregledViewModel.cs" />
     <EmbeddedResource Include="Forms\BiljeskaForm.resx">
       <DependentUpon>BiljeskaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DogadanjaForm.resx">
+      <DependentUpon>DogadanjaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoktorForm.resx">
       <DependentUpon>DoktorForm.cs</DependentUpon>

@@ -24,8 +24,15 @@ namespace TBP.Forms
         private void PacijentForm_Load(object sender, EventArgs e)
         {
             lblDobrodosli.Text = $"Dobrodošli, {Pacijent.idNavigation.ime}";
+            dateTimePickerPredvideniDatumPoroda.Value = Pacijent.predvideni_datum_poroda.Value;
+            doktor doktorPacijenta = DoktorRepozitorij.DoktorOdPacijenta(Pacijent.id);
+            if (doktorPacijenta != null)
+            {
+                lblDoktor.Text = $"Trenunutni doktor: {doktorPacijenta.idNavigation.ime} {doktorPacijenta.idNavigation.prezime} ({doktorPacijenta.adresa_ordinacije})";
+            }
             RefreshGrids();
             RefreshMjerenja();
+            RefreshProgresPoroda();
         }
 
         private void RefreshGrids()
@@ -41,7 +48,8 @@ namespace TBP.Forms
             {
                 ID=b.id,
                 Opis=b.opis,
-                ZaDoktora=b.id_doktora.HasValue
+                ZaDoktora=b.id_doktora.HasValue,
+                Vrijeme=b.vrijeme_objave.Value
             }).ToList(); 
         }
 
@@ -72,6 +80,31 @@ namespace TBP.Forms
             {
                 lblMjerenje.Text += $"Dobili ste {razlika} kg ({postotak}%) od početka mjerenja.";
             }
+        }
+
+
+        private void RefreshProgresPoroda()
+        {
+            int protekloDana = 280 - (Pacijent.predvideni_datum_poroda.Value.Date - DateTime.Now.Date).Days;
+
+            int postotak = Convert.ToInt32(Math.Max(0, Math.Min(protekloDana, 280))/2.8);
+
+            progressBarPoroda.Value = postotak;
+
+            string tekst;
+            if (postotak < 5)
+            {
+                tekst = "Trudnoća je tek krenula!";
+            } else if(postotak > 95)
+            {
+                tekst = "Još malo!";
+            }
+            else
+            {
+                tekst = (protekloDana / 7 + 1).ToString() + ". tjedan trudnoće";
+            }
+
+            lblTekstPorod.Text = tekst;
         }
 
         private void btnNovoMjerenje_Click(object sender, EventArgs e)
@@ -107,6 +140,21 @@ namespace TBP.Forms
         {
             ImenaForm imenaForm = new ImenaForm(Pacijent);
             imenaForm.Show();
+        }
+
+        private void btnDogadanja_Click(object sender, EventArgs e)
+        {
+            DogadanjaForm dogadanjaForm = new DogadanjaForm();
+            dogadanjaForm.Show();
+        }
+
+        private void dateTimePickerPredvideniDatumPoroda_ValueChanged(object sender, EventArgs e)
+        {
+            PacijentRepozitorij.AzurirajDatumPoroda(Pacijent.id, dateTimePickerPredvideniDatumPoroda.Value.Date);
+
+            Pacijent.predvideni_datum_poroda = dateTimePickerPredvideniDatumPoroda.Value.Date;
+
+            RefreshProgresPoroda();
         }
     }
 }

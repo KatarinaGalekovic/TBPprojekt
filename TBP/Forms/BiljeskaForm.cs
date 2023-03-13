@@ -25,7 +25,11 @@ namespace TBP.Forms
         {
             if (cbPrikazatiDoktoru.Checked)
             {
-                Biljeska.id_doktora = PacijentRepozitorij.DohvatiDoktora(Biljeska.id_pacijenta.Value).id;
+                doktor doktor = PacijentRepozitorij.DohvatiDoktora(Biljeska.id_pacijenta.Value);
+                if(doktor != null)
+                {
+                    Biljeska.id_doktora = doktor.id;
+                }
             }
 
             Biljeska.opis = txtBoxOpis.Text;

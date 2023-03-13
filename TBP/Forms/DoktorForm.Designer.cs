@@ -64,9 +64,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(265, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Popis pacijenata";
+            this.label1.Text = "Popis pacijenata (dvostruki klik na pacijenta za detalje)";
             // 
             // btnDodajPacijenta
             // 
@@ -88,7 +88,7 @@
             this.Controls.Add(this.dataGridViewPacijenti);
             this.Controls.Add(this.lblDobrodosli);
             this.Name = "DoktorForm";
-            this.Text = "DoktorForm";
+            this.Text = "Doktor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPacijenti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

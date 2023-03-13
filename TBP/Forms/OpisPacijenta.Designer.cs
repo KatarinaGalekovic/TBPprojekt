@@ -208,7 +208,7 @@
             this.Controls.Add(this.lblDatumRodenja);
             this.Controls.Add(this.lblImeIPrezime);
             this.Name = "OpisPacijenta";
-            this.Text = "OpisPacijenta";
+            this.Text = "Opis pacijenta";
             this.Load += new System.EventHandler(this.OpisPacijenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPregledi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBiljeske)).EndInit();

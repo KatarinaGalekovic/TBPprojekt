@@ -23,20 +23,11 @@ namespace TBP
             }
         }
 
-        public static List<PacijentViewModel> PacijentiOdDoktora(int doktorID)
+        public static List<pacijent> PacijentiOdDoktora(int doktorID)
         {
             using (tbpContext ctx = new tbpContext())
             {
-                return ctx.doktor_pacijent.Where(dp=>dp.id_doktora==doktorID && dp.vrijedece_vrijeme.UpperBoundInfinite).Select(dp => dp.id_pacijentaNavigation).Select(p=>new PacijentViewModel
-                {
-                    ID = p.id,
-                    Ime = p.idNavigation.ime,
-                    Prezime = p.idNavigation.prezime,
-                    DatumRodenja = p.datum_rodenja,
-                    DatumPredvidenogPoroda = p.predvideni_datum_poroda,
-                    DatumZadnjeMenstruacije = p.datum_zadnje_menstruacije,
-                    ZdravstvenoOsiguranje = p.zdravstveno_osiguranje
-                }).ToList();
+                return ctx.doktor_pacijent.Include(dp=>dp.id_pacijentaNavigation.idNavigation).Where(dp=>dp.id_doktora==doktorID && dp.vrijedece_vrijeme.UpperBoundInfinite).Select(dp => dp.id_pacijentaNavigation).ToList();
             }
         }
 
@@ -46,6 +37,14 @@ namespace TBP
             {
                 ctx.pregled.Add(pregled);
                 ctx.SaveChanges();
+            }
+        }
+
+        public static doktor DoktorOdPacijenta(int pacijentID)
+        {
+            using (tbpContext ctx = new tbpContext())
+            {
+                return ctx.doktor_pacijent.Include(dp=>dp.id_doktoraNavigation.idNavigation).Where(dp => dp.id_pacijenta == pacijentID && dp.vrijedece_vrijeme.UpperBoundInfinite).Select(dp => dp.id_doktoraNavigation).FirstOrDefault();
             }
         }
     }

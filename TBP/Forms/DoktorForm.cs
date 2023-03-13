@@ -25,7 +25,16 @@ namespace TBP
 
         private void RefreshGrid()
         {
-            dataGridViewPacijenti.DataSource = DoktorRepozitorij.PacijentiOdDoktora(Doktor.id);
+            dataGridViewPacijenti.DataSource = DoktorRepozitorij.PacijentiOdDoktora(Doktor.id).Select(p => new PacijentViewModel
+            {
+                ID = p.id,
+                Ime = p.idNavigation.ime,
+                Prezime = p.idNavigation.prezime,
+                DatumRodenja = p.datum_rodenja,
+                DatumPredvidenogPoroda = p.predvideni_datum_poroda,
+                DatumZadnjeMenstruacije = p.datum_zadnje_menstruacije,
+                ZdravstvenoOsiguranje = p.zdravstveno_osiguranje
+            }).ToList();
 
         }
 

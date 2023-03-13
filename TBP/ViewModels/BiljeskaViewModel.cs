@@ -11,6 +11,7 @@ namespace TBP.ViewModels
     {
         [Browsable(false)]
         public int ID { get; set; }
+        public DateTime Vrijeme { get; set; }
         public string Opis { get; set; }
         [DisplayName("Za doktora")]
         public bool ZaDoktora { get; set; }

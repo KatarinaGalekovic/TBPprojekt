@@ -62,6 +62,10 @@ namespace TBP
                         noviPacijent.datum_zadnje_menstruacije = dateZadnjeMenstruacije.Value;
                     if(datePredvidenogPoroda.Checked)
                         noviPacijent.predvideni_datum_poroda = datePredvidenogPoroda.Value;
+                    else if (dateZadnjeMenstruacije.Checked)
+                    {
+                        noviPacijent.predvideni_datum_poroda = dateZadnjeMenstruacije.Value.AddDays(280);
+                    }
                     noviPacijent.zdravstveno_osiguranje = rbZdravstvenoDa.Checked;
 
                     noviPacijent.idNavigation = noviKorisnik;
@@ -114,7 +118,7 @@ namespace TBP
 
                     DoktorForm doktorForm = new DoktorForm(trazeniDoktor);
 
-                    doktorForm.FormClosed += (a, b) => { this.Show(); };
+                    doktorForm.FormClosed += (a, b) => { this.Close(); };
                     doktorForm.Show();
                 }
                 else
@@ -123,7 +127,7 @@ namespace TBP
 
                     PacijentForm pacijentForm = new PacijentForm(trazeniPacijent);
 
-                    pacijentForm.FormClosed += (a, b) => { this.Show(); };
+                    pacijentForm.FormClosed += (a, b) => { this.Close(); };
                     pacijentForm.Show();
                 }
             }
