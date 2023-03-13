@@ -42,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewBiljeske = new System.Windows.Forms.DataGridView();
+            this.btnNoviPregled = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPregledi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBiljeske)).BeginInit();
             this.SuspendLayout();
@@ -170,17 +171,28 @@
             this.dataGridViewBiljeske.AllowUserToAddRows = false;
             this.dataGridViewBiljeske.AllowUserToDeleteRows = false;
             this.dataGridViewBiljeske.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBiljeske.Location = new System.Drawing.Point(504, 68);
+            this.dataGridViewBiljeske.Location = new System.Drawing.Point(493, 68);
             this.dataGridViewBiljeske.Name = "dataGridViewBiljeske";
             this.dataGridViewBiljeske.ReadOnly = true;
             this.dataGridViewBiljeske.Size = new System.Drawing.Size(240, 332);
             this.dataGridViewBiljeske.TabIndex = 13;
             // 
+            // btnNoviPregled
+            // 
+            this.btnNoviPregled.Location = new System.Drawing.Point(63, 407);
+            this.btnNoviPregled.Name = "btnNoviPregled";
+            this.btnNoviPregled.Size = new System.Drawing.Size(134, 37);
+            this.btnNoviPregled.TabIndex = 14;
+            this.btnNoviPregled.Text = "Zakaži novi pregled";
+            this.btnNoviPregled.UseVisualStyleBackColor = true;
+            this.btnNoviPregled.Click += new System.EventHandler(this.btnNoviPregled_Click);
+            // 
             // OpisPacijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 469);
+            this.Controls.Add(this.btnNoviPregled);
             this.Controls.Add(this.dataGridViewBiljeske);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -221,5 +233,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridViewBiljeske;
+        private System.Windows.Forms.Button btnNoviPregled;
     }
 }

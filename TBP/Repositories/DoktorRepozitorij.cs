@@ -39,5 +39,14 @@ namespace TBP
                 }).ToList();
             }
         }
+
+        public static void DodajPregled(pregled pregled)
+        {
+            using (tbpContext ctx = new tbpContext())
+            {
+                ctx.pregled.Add(pregled);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TBP.Forms;
 using TBP.Models;
 
 namespace TBP
@@ -85,6 +86,7 @@ namespace TBP
                 }
 
                 MessageBox.Show("Uspješno ste se registrirali!", "Uspjeh!");
+                Prijavi(noviKorisnik.korisnicko_ime, noviKorisnik.lozinka);
             }
         }
 
@@ -93,6 +95,11 @@ namespace TBP
             string korisnickoIme = txtBoxPrijavaKorisnickoIme.Text;
             string lozinka = txtBoxPrijavaLozinka.Text;
 
+            Prijavi(korisnickoIme, lozinka);
+        }
+
+        private void Prijavi(string korisnickoIme, string lozinka)
+        {
             korisnik trazeniKorisnik = KorisnikRepozitorij.PrijaviKorisnika(korisnickoIme, lozinka);
 
             if (trazeniKorisnik != null)
@@ -113,6 +120,11 @@ namespace TBP
                 else
                 {
                     pacijent trazeniPacijent = trazeniKorisnik.pacijent;
+
+                    PacijentForm pacijentForm = new PacijentForm(trazeniPacijent);
+
+                    pacijentForm.FormClosed += (a, b) => { this.Show(); };
+                    pacijentForm.Show();
                 }
             }
             else

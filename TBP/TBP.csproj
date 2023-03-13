@@ -273,11 +273,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BiljeskaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BiljeskaForm.Designer.cs">
+      <DependentUpon>BiljeskaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoktorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DoktorForm.Designer.cs">
       <DependentUpon>DoktorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImenaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImenaForm.Designer.cs">
+      <DependentUpon>ImenaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObvezeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObvezeForm.Designer.cs">
+      <DependentUpon>ObvezeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PacijentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PacijentForm.Designer.cs">
+      <DependentUpon>PacijentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PregledForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PregledForm.Designer.cs">
+      <DependentUpon>PregledForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\DoktorRepozitorij.cs" />
     <Compile Include="Forms\Form1.cs">
@@ -286,6 +316,7 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ImenaRepozitorij.cs" />
     <Compile Include="Repositories\KorisnikRepozitorij.cs" />
     <Compile Include="Models\biljeska.cs" />
     <Compile Include="Models\dogadanja.cs" />
@@ -315,21 +346,39 @@
     <Compile Include="Forms\OpisPacijenta.Designer.cs">
       <DependentUpon>OpisPacijenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ObvezeRepozitorij.cs" />
     <Compile Include="Repositories\PacijentRepozitorij.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BiljeskaViewModel.cs" />
     <Compile Include="ViewModels\PacijentViewModel.cs" />
+    <Compile Include="ViewModels\PregledViewModel.cs" />
+    <EmbeddedResource Include="Forms\BiljeskaForm.resx">
+      <DependentUpon>BiljeskaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DoktorForm.resx">
       <DependentUpon>DoktorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImenaForm.resx">
+      <DependentUpon>ImenaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObvezeForm.resx">
+      <DependentUpon>ObvezeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OdabirPacijentaForm.resx">
       <DependentUpon>OdabirPacijentaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpisPacijenta.resx">
       <DependentUpon>OpisPacijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PacijentForm.resx">
+      <DependentUpon>PacijentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PregledForm.resx">
+      <DependentUpon>PregledForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

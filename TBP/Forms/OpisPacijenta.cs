@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TBP.Forms;
 using TBP.Models;
 
 namespace TBP
@@ -24,7 +25,7 @@ namespace TBP
 
         private void RefreshGrids()
         {
-            dataGridViewPregledi.DataSource = PacijentRepozitorij.DohvatiPregledePacijenta(Pacijent.id);
+            dataGridViewPregledi.DataSource = PacijentRepozitorij.DohvatiPregledePacijentaZaDoktora(Pacijent.id, Doktor.id);
             dataGridViewBiljeske.DataSource = PacijentRepozitorij.DohvatiBilješkePacijentaZaDoktora(Pacijent.id, Doktor.id);
         }
 
@@ -35,6 +36,14 @@ namespace TBP
             lblZdravstveno.Text = Pacijent.zdravstveno_osiguranje ? "Ima" : "Nema";
             lblMenstruacija.Text = Pacijent.datum_zadnje_menstruacije.HasValue ? Pacijent.datum_zadnje_menstruacije.Value.ToShortDateString() : "Nije navedeno";
             lblPorod.Text = Pacijent.predvideni_datum_poroda.HasValue ? Pacijent.predvideni_datum_poroda.Value.ToShortDateString() : "Nije navedeno";
+            RefreshGrids();
+        }
+
+        private void btnNoviPregled_Click(object sender, EventArgs e)
+        {
+            PregledForm pregledForm = new PregledForm(Pacijent.id, Doktor.id);
+
+            pregledForm.ShowDialog();
             RefreshGrids();
         }
     }
