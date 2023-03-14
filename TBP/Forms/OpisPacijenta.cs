@@ -30,7 +30,7 @@ namespace TBP
             {
                 ID = p.id,
                 Pocetak = p.vrijeme.LowerBound,
-                Trajanje = (p.vrijeme.UpperBound - p.vrijeme.LowerBound).Minutes,
+                Trajanje = Convert.ToInt32((p.vrijeme.UpperBound - p.vrijeme.LowerBound).TotalMinutes),
                 BiljeskaDoktora = p.biljeska_doktora
             }).ToList();
             dataGridViewBiljeske.DataSource = PacijentRepozitorij.DohvatiBilješkePacijentaZaDoktora(Pacijent.id, Doktor.id).Select(b => new BiljeskaViewModel()

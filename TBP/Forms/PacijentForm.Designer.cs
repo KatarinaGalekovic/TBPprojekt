@@ -48,6 +48,7 @@
             this.dateTimePickerPredvideniDatumPoroda = new System.Windows.Forms.DateTimePicker();
             this.lblDoktor = new System.Windows.Forms.Label();
             this.btnForum = new System.Windows.Forms.Button();
+            this.btnPrijasnjiDoktori = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBiljeske)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPregledi)).BeginInit();
             this.SuspendLayout();
@@ -198,7 +199,7 @@
             // lblPredvidenDatumPoroda
             // 
             this.lblPredvidenDatumPoroda.AutoSize = true;
-            this.lblPredvidenDatumPoroda.Location = new System.Drawing.Point(26, 360);
+            this.lblPredvidenDatumPoroda.Location = new System.Drawing.Point(26, 375);
             this.lblPredvidenDatumPoroda.Name = "lblPredvidenDatumPoroda";
             this.lblPredvidenDatumPoroda.Size = new System.Drawing.Size(127, 13);
             this.lblPredvidenDatumPoroda.TabIndex = 16;
@@ -217,7 +218,7 @@
             // 
             this.dateTimePickerPredvideniDatumPoroda.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateTimePickerPredvideniDatumPoroda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerPredvideniDatumPoroda.Location = new System.Drawing.Point(159, 354);
+            this.dateTimePickerPredvideniDatumPoroda.Location = new System.Drawing.Point(159, 369);
             this.dateTimePickerPredvideniDatumPoroda.Name = "dateTimePickerPredvideniDatumPoroda";
             this.dateTimePickerPredvideniDatumPoroda.Size = new System.Drawing.Size(96, 20);
             this.dateTimePickerPredvideniDatumPoroda.TabIndex = 18;
@@ -242,11 +243,22 @@
             this.btnForum.UseVisualStyleBackColor = true;
             this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
             // 
+            // btnPrijasnjiDoktori
+            // 
+            this.btnPrijasnjiDoktori.Location = new System.Drawing.Point(29, 306);
+            this.btnPrijasnjiDoktori.Name = "btnPrijasnjiDoktori";
+            this.btnPrijasnjiDoktori.Size = new System.Drawing.Size(110, 34);
+            this.btnPrijasnjiDoktori.TabIndex = 21;
+            this.btnPrijasnjiDoktori.Text = "Moji prijašnji doktori";
+            this.btnPrijasnjiDoktori.UseVisualStyleBackColor = true;
+            this.btnPrijasnjiDoktori.Click += new System.EventHandler(this.btnPrijasnjiDoktori_Click);
+            // 
             // PacijentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 604);
+            this.Controls.Add(this.btnPrijasnjiDoktori);
             this.Controls.Add(this.btnForum);
             this.Controls.Add(this.lblDoktor);
             this.Controls.Add(this.dateTimePickerPredvideniDatumPoroda);
@@ -299,5 +311,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerPredvideniDatumPoroda;
         private System.Windows.Forms.Label lblDoktor;
         private System.Windows.Forms.Button btnForum;
+        private System.Windows.Forms.Button btnPrijasnjiDoktori;
     }
 }

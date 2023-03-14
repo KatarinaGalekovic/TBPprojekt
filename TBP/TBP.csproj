@@ -328,6 +328,12 @@
     <Compile Include="Forms\PregledForm.Designer.cs">
       <DependentUpon>PregledForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrijasnjiDoktoriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrijasnjiDoktoriForm.Designer.cs">
+      <DependentUpon>PrijasnjiDoktoriForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TemaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,7 @@
     <Compile Include="ViewModels\BiljeskaViewModel.cs" />
     <Compile Include="ViewModels\KomentarViewModel.cs" />
     <Compile Include="ViewModels\PacijentViewModel.cs" />
+    <Compile Include="ViewModels\PijasnjiDoktorViewModel.cs" />
     <Compile Include="ViewModels\PregledViewModel.cs" />
     <EmbeddedResource Include="Forms\BiljeskaForm.resx">
       <DependentUpon>BiljeskaForm.cs</DependentUpon>
@@ -416,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PregledForm.resx">
       <DependentUpon>PregledForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrijasnjiDoktoriForm.resx">
+      <DependentUpon>PrijasnjiDoktoriForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TemaForm.resx">
       <DependentUpon>TemaForm.cs</DependentUpon>

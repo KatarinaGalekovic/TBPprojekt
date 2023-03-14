@@ -31,6 +31,14 @@ namespace TBP
             }
         }
 
+        public static List<doktor_pacijent> SviPrijasnjiDoktoriPacijenta(int pacijentID)
+        {
+            using (tbpContext ctx = new tbpContext())
+            {
+                return ctx.doktor_pacijent.Include(dp => dp.id_doktoraNavigation.idNavigation).Where(dp => dp.id_pacijenta == pacijentID && !dp.vrijedece_vrijeme.UpperBoundInfinite).ToList();
+            }
+        }
+
         public static void DodajPregled(pregled pregled)
         {
             using (tbpContext ctx = new tbpContext())

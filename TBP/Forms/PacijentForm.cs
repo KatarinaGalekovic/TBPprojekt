@@ -41,8 +41,8 @@ namespace TBP.Forms
             {
                 ID=p.id,
                 Pocetak=p.vrijeme.LowerBound,
-                Trajanje=(p.vrijeme.UpperBound-p.vrijeme.LowerBound).Minutes,
-                BiljeskaDoktora=p.biljeska_doktora
+                Trajanje=Convert.ToInt32((p.vrijeme.UpperBound - p.vrijeme.LowerBound).TotalMinutes),
+                BiljeskaDoktora =p.biljeska_doktora
             }).ToList();
             dataGridViewBiljeske.DataSource = PacijentRepozitorij.DohvatiBilješkePacijenta(Pacijent.id).Select(b=>new BiljeskaViewModel()
             {
@@ -161,6 +161,12 @@ namespace TBP.Forms
         {
             ForumForm forumForm = new ForumForm(Pacijent.idNavigation);
             forumForm.Show();
+        }
+
+        private void btnPrijasnjiDoktori_Click(object sender, EventArgs e)
+        {
+            PrijasnjiDoktoriForm prijasnjiDoktoriForm = new PrijasnjiDoktoriForm(Pacijent);
+            prijasnjiDoktoriForm.Show();
         }
     }
 }

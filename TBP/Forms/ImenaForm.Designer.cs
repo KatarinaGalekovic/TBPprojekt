@@ -41,6 +41,7 @@
             this.listBoxImena.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBoxImena.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.listBoxImena.FormattingEnabled = true;
+            this.listBoxImena.ItemHeight = 30;
             this.listBoxImena.Location = new System.Drawing.Point(128, 84);
             this.listBoxImena.Name = "listBoxImena";
             this.listBoxImena.Size = new System.Drawing.Size(537, 303);

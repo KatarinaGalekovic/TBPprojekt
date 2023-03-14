@@ -50,7 +50,14 @@ namespace TBP.Forms
             if (imeDjeteta == String.Empty)
                 return;
 
-            ImenaRepozitorij.DodajNovoIme(new ime_djeteta() { id_pacijenta = Pacijent.id, ime = imeDjeteta, spol = rbM.Checked ? 'M' : 'Ž' });
+            try
+            {
+                ImenaRepozitorij.DodajNovoIme(new ime_djeteta() { id_pacijenta = Pacijent.id, ime = imeDjeteta, spol = rbM.Checked ? 'M' : 'Ž' });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.Message, "Greška");
+            }
 
             txtBoxNovoIme.Clear();
             RefreshListBox();

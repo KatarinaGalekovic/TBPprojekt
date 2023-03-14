@@ -47,8 +47,6 @@ namespace TBP.Repositories
         {
             using (tbpContext ctx = new tbpContext())
             {
-                if (ctx.ime_djeteta.FirstOrDefault(id => id.ime == imeDjeteta.ime) != null)
-                    return;
                 ctx.ime_djeteta.Add(imeDjeteta);
                 ctx.SaveChanges();
             }
