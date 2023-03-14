@@ -47,6 +47,7 @@
             this.lblTekstPorod = new System.Windows.Forms.Label();
             this.dateTimePickerPredvideniDatumPoroda = new System.Windows.Forms.DateTimePicker();
             this.lblDoktor = new System.Windows.Forms.Label();
+            this.btnForum = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBiljeske)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPregledi)).BeginInit();
             this.SuspendLayout();
@@ -230,11 +231,23 @@
             this.lblDoktor.TabIndex = 19;
             this.lblDoktor.Text = "Trenutni doktor: neodređen, molimo javite se svom doktoru da vas upiše";
             // 
+            // btnForum
+            // 
+            this.btnForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.btnForum.Location = new System.Drawing.Point(244, 115);
+            this.btnForum.Name = "btnForum";
+            this.btnForum.Size = new System.Drawing.Size(110, 77);
+            this.btnForum.TabIndex = 20;
+            this.btnForum.Text = "Forum";
+            this.btnForum.UseVisualStyleBackColor = true;
+            this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
+            // 
             // PacijentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 604);
+            this.Controls.Add(this.btnForum);
             this.Controls.Add(this.lblDoktor);
             this.Controls.Add(this.dateTimePickerPredvideniDatumPoroda);
             this.Controls.Add(this.lblTekstPorod);
@@ -285,5 +298,6 @@
         private System.Windows.Forms.Label lblTekstPorod;
         private System.Windows.Forms.DateTimePicker dateTimePickerPredvideniDatumPoroda;
         private System.Windows.Forms.Label lblDoktor;
+        private System.Windows.Forms.Button btnForum;
     }
 }

@@ -156,5 +156,11 @@ namespace TBP.Forms
 
             RefreshProgresPoroda();
         }
+
+        private void btnForum_Click(object sender, EventArgs e)
+        {
+            ForumForm forumForm = new ForumForm(Pacijent.idNavigation);
+            forumForm.Show();
+        }
     }
 }

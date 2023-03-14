@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TBP.Forms;
 using TBP.Models;
 using TBP.ViewModels;
 
@@ -55,6 +56,12 @@ namespace TBP
 
             OpisPacijenta opisPacijentaForm = new OpisPacijenta(PacijentRepozitorij.DohvatiPacijenta(odabraniPacijent.ID), Doktor);
             opisPacijentaForm.Show();
+        }
+
+        private void btnForum_Click(object sender, EventArgs e)
+        {
+            ForumForm forumForm = new ForumForm(Doktor.idNavigation);
+            forumForm.Show();
         }
     }
 }

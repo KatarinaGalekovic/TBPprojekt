@@ -141,11 +141,12 @@
             // 
             this.dataGridViewPregledi.AllowUserToAddRows = false;
             this.dataGridViewPregledi.AllowUserToDeleteRows = false;
+            this.dataGridViewPregledi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewPregledi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPregledi.Location = new System.Drawing.Point(63, 224);
             this.dataGridViewPregledi.Name = "dataGridViewPregledi";
             this.dataGridViewPregledi.ReadOnly = true;
-            this.dataGridViewPregledi.Size = new System.Drawing.Size(349, 176);
+            this.dataGridViewPregledi.Size = new System.Drawing.Size(362, 176);
             this.dataGridViewPregledi.TabIndex = 10;
             // 
             // label6
@@ -160,7 +161,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(490, 49);
+            this.label7.Location = new System.Drawing.Point(457, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 12;
@@ -170,11 +171,12 @@
             // 
             this.dataGridViewBiljeske.AllowUserToAddRows = false;
             this.dataGridViewBiljeske.AllowUserToDeleteRows = false;
+            this.dataGridViewBiljeske.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewBiljeske.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBiljeske.Location = new System.Drawing.Point(493, 68);
+            this.dataGridViewBiljeske.Location = new System.Drawing.Point(460, 68);
             this.dataGridViewBiljeske.Name = "dataGridViewBiljeske";
             this.dataGridViewBiljeske.ReadOnly = true;
-            this.dataGridViewBiljeske.Size = new System.Drawing.Size(240, 332);
+            this.dataGridViewBiljeske.Size = new System.Drawing.Size(302, 332);
             this.dataGridViewBiljeske.TabIndex = 13;
             // 
             // btnNoviPregled

@@ -258,6 +258,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -291,11 +292,23 @@
     <Compile Include="Forms\DoktorForm.Designer.cs">
       <DependentUpon>DoktorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ForumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ForumForm.Designer.cs">
+      <DependentUpon>ForumForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ImenaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ImenaForm.Designer.cs">
       <DependentUpon>ImenaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NovaTemaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NovaTemaForm.Designer.cs">
+      <DependentUpon>NovaTemaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ObvezeForm.cs">
       <SubType>Form</SubType>
@@ -315,6 +328,12 @@
     <Compile Include="Forms\PregledForm.Designer.cs">
       <DependentUpon>PregledForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TemaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TemaForm.Designer.cs">
+      <DependentUpon>TemaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\DogadanjaRepozitorij.cs" />
     <Compile Include="Repositories\DoktorRepozitorij.cs" />
     <Compile Include="Forms\Form1.cs">
@@ -323,6 +342,7 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ForumRepozitorij.cs" />
     <Compile Include="Repositories\ImenaRepozitorij.cs" />
     <Compile Include="Repositories\KorisnikRepozitorij.cs" />
     <Compile Include="Models\biljeska.cs" />
@@ -358,6 +378,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BiljeskaViewModel.cs" />
+    <Compile Include="ViewModels\KomentarViewModel.cs" />
     <Compile Include="ViewModels\PacijentViewModel.cs" />
     <Compile Include="ViewModels\PregledViewModel.cs" />
     <EmbeddedResource Include="Forms\BiljeskaForm.resx">
@@ -372,8 +393,14 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ForumForm.resx">
+      <DependentUpon>ForumForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImenaForm.resx">
       <DependentUpon>ImenaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NovaTemaForm.resx">
+      <DependentUpon>NovaTemaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ObvezeForm.resx">
       <DependentUpon>ObvezeForm.cs</DependentUpon>
@@ -389,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PregledForm.resx">
       <DependentUpon>PregledForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TemaForm.resx">
+      <DependentUpon>TemaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
