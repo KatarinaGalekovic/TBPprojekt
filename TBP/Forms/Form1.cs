@@ -85,6 +85,11 @@ namespace TBP
                     ctx.SaveChanges();
                 }
                 catch (Exception ex) {
+                    if (ex.InnerException==null)
+                    {
+                        MessageBox.Show("Greška pri spajanju na bazu", "Greška");
+                        return;
+                    }
                     MessageBox.Show(ex.InnerException.Message, "Greška");
                     return;
                 }
@@ -104,7 +109,16 @@ namespace TBP
 
         private void Prijavi(string korisnickoIme, string lozinka)
         {
-            korisnik trazeniKorisnik = KorisnikRepozitorij.PrijaviKorisnika(korisnickoIme, lozinka);
+            korisnik trazeniKorisnik;
+            try
+            {
+                trazeniKorisnik = KorisnikRepozitorij.PrijaviKorisnika(korisnickoIme, lozinka);
+            }
+            catch
+            {
+                MessageBox.Show("Greška pri spajanju na bazu.");
+                return;
+            }
 
             if (trazeniKorisnik != null)
             {
