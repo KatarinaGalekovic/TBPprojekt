@@ -16,9 +16,15 @@ namespace TBP.Forms
     {
         int trenutniIndeks = 0;
         List<dogadanja> svaDogadanja;
-        public DogadanjaForm()
+        public DogadanjaForm(pacijent pacijent)
         {
             svaDogadanja = DogadanjaRepozitorij.DohvatiSvaDogadanja();
+            int protekloDana = Convert.ToInt32(280 - (pacijent.predvideni_datum_poroda.Value.Date - DateTime.Now.Date).TotalDays);
+            trenutniIndeks = protekloDana / 7 + 1;
+            if (trenutniIndeks < 0)
+                trenutniIndeks = 0;
+            else if (trenutniIndeks > svaDogadanja.Count - 1)
+                trenutniIndeks = svaDogadanja.Count - 1;
             InitializeComponent();
         }
 

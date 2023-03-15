@@ -41,9 +41,9 @@
             // 
             this.listBoxObveze.DisplayMember = "opis";
             this.listBoxObveze.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.listBoxObveze.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.listBoxObveze.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.listBoxObveze.FormattingEnabled = true;
-            this.listBoxObveze.ItemHeight = 30;
+            this.listBoxObveze.ItemHeight = 20;
             this.listBoxObveze.Location = new System.Drawing.Point(99, 115);
             this.listBoxObveze.Name = "listBoxObveze";
             this.listBoxObveze.Size = new System.Drawing.Size(583, 277);

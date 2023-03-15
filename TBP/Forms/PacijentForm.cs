@@ -85,7 +85,7 @@ namespace TBP.Forms
 
         private void RefreshProgresPoroda()
         {
-            int protekloDana = 280 - (Pacijent.predvideni_datum_poroda.Value.Date - DateTime.Now.Date).Days;
+            int protekloDana = Convert.ToInt32(280 - (Pacijent.predvideni_datum_poroda.Value.Date - DateTime.Now.Date).TotalDays);
 
             int postotak = Convert.ToInt32(Math.Max(0, Math.Min(protekloDana, 280))/2.8);
 
@@ -144,7 +144,7 @@ namespace TBP.Forms
 
         private void btnDogadanja_Click(object sender, EventArgs e)
         {
-            DogadanjaForm dogadanjaForm = new DogadanjaForm();
+            DogadanjaForm dogadanjaForm = new DogadanjaForm(Pacijent);
             dogadanjaForm.Show();
         }
 

@@ -47,9 +47,10 @@
             this.cbPrikazatiDoktoru.AutoSize = true;
             this.cbPrikazatiDoktoru.Location = new System.Drawing.Point(50, 50);
             this.cbPrikazatiDoktoru.Name = "cbPrikazatiDoktoru";
-            this.cbPrikazatiDoktoru.Size = new System.Drawing.Size(154, 17);
+            this.cbPrikazatiDoktoru.Size = new System.Drawing.Size(443, 17);
             this.cbPrikazatiDoktoru.TabIndex = 1;
-            this.cbPrikazatiDoktoru.Text = "Prikazati bilješku i doktoru?";
+            this.cbPrikazatiDoktoru.Text = "Prikazati bilješku i doktoru? (bilješka će se prikazati samo trenutnom doktoru, a" +
+    "ko postoji)";
             this.cbPrikazatiDoktoru.UseVisualStyleBackColor = true;
             // 
             // label1

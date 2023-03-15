@@ -49,6 +49,8 @@ namespace TBP
             lblZdravstveno.Text = Pacijent.zdravstveno_osiguranje ? "Ima" : "Nema";
             lblMenstruacija.Text = Pacijent.datum_zadnje_menstruacije.HasValue ? Pacijent.datum_zadnje_menstruacije.Value.ToShortDateString() : "Nije navedeno";
             lblPorod.Text = Pacijent.predvideni_datum_poroda.HasValue ? Pacijent.predvideni_datum_poroda.Value.ToShortDateString() : "Nije navedeno";
+            mjerenje zadnjeMjerenje = PacijentRepozitorij.ZadnjeMjerenje(Pacijent.id);
+            lblKilaza.Text = zadnjeMjerenje!=null ? decimal.Round(zadnjeMjerenje.tezina,2).ToString() : "Nije izmjerena";
             RefreshGrids();
         }
 

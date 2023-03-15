@@ -43,6 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewBiljeske = new System.Windows.Forms.DataGridView();
             this.btnNoviPregled = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblKilaza = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPregledi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBiljeske)).BeginInit();
             this.SuspendLayout();
@@ -143,16 +145,16 @@
             this.dataGridViewPregledi.AllowUserToDeleteRows = false;
             this.dataGridViewPregledi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewPregledi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPregledi.Location = new System.Drawing.Point(63, 224);
+            this.dataGridViewPregledi.Location = new System.Drawing.Point(63, 236);
             this.dataGridViewPregledi.Name = "dataGridViewPregledi";
             this.dataGridViewPregledi.ReadOnly = true;
-            this.dataGridViewPregledi.Size = new System.Drawing.Size(362, 176);
+            this.dataGridViewPregledi.Size = new System.Drawing.Size(362, 164);
             this.dataGridViewPregledi.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 205);
+            this.label6.Location = new System.Drawing.Point(60, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 13);
             this.label6.TabIndex = 11;
@@ -189,11 +191,31 @@
             this.btnNoviPregled.UseVisualStyleBackColor = true;
             this.btnNoviPregled.Click += new System.EventHandler(this.btnNoviPregled_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(60, 190);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Kilaža:";
+            // 
+            // lblKilaza
+            // 
+            this.lblKilaza.AutoSize = true;
+            this.lblKilaza.Location = new System.Drawing.Point(204, 190);
+            this.lblKilaza.Name = "lblKilaza";
+            this.lblKilaza.Size = new System.Drawing.Size(35, 13);
+            this.lblKilaza.TabIndex = 16;
+            this.lblKilaza.Text = "Kilaža";
+            // 
             // OpisPacijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 469);
+            this.Controls.Add(this.lblKilaza);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnNoviPregled);
             this.Controls.Add(this.dataGridViewBiljeske);
             this.Controls.Add(this.label7);
@@ -236,5 +258,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridViewBiljeske;
         private System.Windows.Forms.Button btnNoviPregled;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblKilaza;
     }
 }
