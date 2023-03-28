@@ -1,2 +1,2 @@
 # TBPprojekt
-Ovo je neki opis.
+Projekt TBP.
