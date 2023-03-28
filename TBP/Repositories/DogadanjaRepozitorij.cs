@@ -14,7 +14,7 @@ namespace TBP.Repositories
         {
             using(tbpContext ctx = new tbpContext())
             {
-                return ctx.dogadanja.ToList();
+                return ctx.dogadanja.OrderBy(d=>d.tjedan).ToList();
             }
         }
     }

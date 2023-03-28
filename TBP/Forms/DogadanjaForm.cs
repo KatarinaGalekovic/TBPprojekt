@@ -20,7 +20,7 @@ namespace TBP.Forms
         {
             svaDogadanja = DogadanjaRepozitorij.DohvatiSvaDogadanja();
             int protekloDana = Convert.ToInt32(280 - (pacijent.predvideni_datum_poroda.Value.Date - DateTime.Now.Date).TotalDays);
-            trenutniIndeks = protekloDana / 7 + 1;
+            trenutniIndeks = protekloDana / 7;
             if (trenutniIndeks < 0)
                 trenutniIndeks = 0;
             else if (trenutniIndeks > svaDogadanja.Count - 1)
